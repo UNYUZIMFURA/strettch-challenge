@@ -34,7 +34,7 @@ const submitJob = async () => {
     console.error('Error creating job:', error.message);
     alert('Failed to create job. Please try again.');
   } else {
-    alert('Job created successfully!');
+    alert('Job created!');
     hideCreateJobModal();
 
     title.value = '';

@@ -10,7 +10,7 @@ export const createJob = async (jobData: {
   applicationDeadline: string;
 }) => {
   const { data, error } = await supabase
-    .from('jobs') // Ensure your Supabase table is named "jobs"
+    .from('jobs')
     .insert([jobData]);
 
   return { data, error };
