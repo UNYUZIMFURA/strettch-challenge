@@ -12,12 +12,12 @@ import { useAuthStore } from '@/store/authStore'
     <span class="cursor-pointer">Info</span>
     </div>
     <div class="flex items-center gap-2">
-      <div class="h-[2.5rem] w-[2.5rem] rounded-full overflow-hidden">
+      <div class="h-[2.5rem] w-[2.5rem] rounded-full overflow-hidden cursor-pointer">
         <img src="@/assets/images/businessman.jpeg" class="h-full w-full object-cover" />
       </div>
       <div class="flex flex-col">
         <span>{{ user?.username }}</span>
-        <span class="text-xs">Company Admin</span>
+        <span class="text-xs">{{ user?.user_type }}</span>
       </div>
     </div>
   </nav>
