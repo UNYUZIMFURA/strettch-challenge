@@ -45,7 +45,7 @@ async function onSubmit(values) {
           <Field
             name="username"
             type="text"
-            class="h-[3rem] border border-[#d7dbe1] rounded-[4px] outline-none indent-4"
+            class="h-[3rem] border border-[#d7dbe1] rounded-[4px] outline-none indent-3"
           />
           <ErrorMessage name="username" class="text-[#D80000]" />
         </div>
@@ -54,7 +54,7 @@ async function onSubmit(values) {
           <Field
             name="password"
             type="password"
-            class="h-[3rem] border border-[#d7dbe1] rounded-[4px] outline-none indent-4"
+            class="h-[3rem] border border-[#d7dbe1] rounded-[4px] outline-none indent-3"
           />
           <ErrorMessage name="password" class="text-[#D80000]" />
         </div>
