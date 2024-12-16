@@ -7,9 +7,7 @@ const user = authStore.getUser()
 const createJobModal = useCreateJobModal()
 const isAdmin = user?.user_type === 'PARTRNER_COMPANY_ADMIN'
 const displayJobCreateModal = () => {
-    console.log("Modal state before:", createJobModal.visible);
     createJobModal.showModal();
-    console.log("Modal state after:", createJobModal.visible);
 };
 
 </script>
