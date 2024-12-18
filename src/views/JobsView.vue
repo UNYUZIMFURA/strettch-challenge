@@ -46,9 +46,9 @@ async function onSubmit(values) {
 
 async function getFetchJobs() {
   try {
-    const data = await getJobs()
-    jobs.value = data.data || []
-    console.log(data)
+    const response = await getJobs()
+    jobs.value = response.data || []
+    console.log(response)
   } catch (err: any) {
     console.log(err.message)
   }
