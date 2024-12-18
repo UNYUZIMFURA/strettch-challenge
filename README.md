@@ -1,5 +1,6 @@
 # Strettch Challenge
-
+- A basic frontend challenge for admins to create jobs and listing them to users
+  
 # Features
 - User Authentication: Login, Users are already created via Supabase
 - Create Jobs(By Admins), View Jobs(By other Users)
