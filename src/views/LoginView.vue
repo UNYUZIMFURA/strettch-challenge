@@ -1,7 +1,7 @@
 <script setup>
+import * as zod from 'zod'
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
-import * as zod from 'zod'
 import { useAuth } from '@/composables/useAuth'
 import { ref } from 'vue'
 

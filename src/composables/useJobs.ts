@@ -14,3 +14,10 @@ export const createJob = async (jobData: {
 
   return { data, error };
 };
+
+export const getJobs = async () => {
+  const { data, error } = await supabase
+    .from('jobs')
+    .select('*');
+  return { data, error };
+};

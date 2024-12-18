@@ -5,14 +5,16 @@ import Navbar from '@/components/Navbar.vue'
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
 import { useCreateJobModal } from '@/store/createJobModalVisibility'
-import { ref, computed } from 'vue'
-import { createJob } from '@/composables/useJobs'
+import { ref, computed, onMounted } from 'vue'
+import { createJob, getJobs } from '@/composables/useJobs'
+import type { Job } from '@/types/Job'
 
 const createJobModal = useCreateJobModal()
 const isCreateModalVisible = computed(() => createJobModal.visible)
 const hideCreateJobModal = () => {
   createJobModal.hideModal()
 }
+const jobs = ref<Job[] | null>(null)
 const loading = ref(false)
 const validationSchema = toTypedSchema(
   zod.object({
@@ -33,23 +35,37 @@ const validationSchema = toTypedSchema(
 
 async function onSubmit(values) {
   try {
-   const data = await createJob(values)
-   console.log(data)
+    const data = await createJob(values)
+    console.log(data)
   } catch (err: any) {
     console.log(err.message)
   }
 }
+
+async function getFetchJobs() {
+  try {
+    const data = await getJobs()
+    jobs.value = data.data || []
+    console.log(data)
+  } catch (err: any) {
+    console.log(err.message)
+  }
+}
+
+onMounted(() => {
+  getFetchJobs()
+})
 </script>
 
 <template>
   <main>
     <Navbar />
     <div class="flex flex-col gap-4 px-10 py-[3rem]">
-      <span class="text-lg"><span class="font-semibold">3</span> Job(s) Found</span>
+      <span class="text-lg"
+        ><span class="font-semibold">{{ jobs?.length || 'loading' }}</span> Job(s) Found</span
+      >
       <div class="flex flex-wrap gap-4">
-        <JobCard />
-        <JobCard />
-        <JobCard />
+        <JobCard v-for="job in jobs" :job="job"/>
         <div
           v-if="isCreateModalVisible"
           class="h-screen w-screen flex items-center justify-center bg-[rgba(0,0,0,.5)] fixed top-0 left-0 z-20"
