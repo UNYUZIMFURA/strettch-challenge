@@ -8,7 +8,7 @@ defineProps<{
 }>()
 </script>
 <template>
-  <div class="w-[25rem] border border-[#2370CB] cursor-pointer flex flex-col gap-4 p-4 rounded-md">
+  <div class="w-full max-w-[767px] md:w-[25rem] border border-[#2370CB] cursor-pointer flex flex-col gap-4 p-4 rounded-md">
     <div class="flex justify-between items-start">
       <div class="flex gap-2 items-center">
         <div

@@ -60,13 +60,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <main>
+  <main class="w-full">
     <Navbar />
-    <div class="flex flex-col gap-4 px-10 py-[3rem]">
+    <div class="w-full gap-4 px-4 md:px-10 py-[3rem]">
       <span class="text-lg"
         ><span class="font-semibold">{{ jobs?.length || 'loading' }}</span> Job(s) Found</span
       >
-      <div class="flex flex-wrap gap-4">
+      <div class="w-full flex flex-wrap h-[20rem] gap-4">
         <JobCard v-for="job in jobs" :job="job" />
         <div
           v-if="isCreateModalVisible"
