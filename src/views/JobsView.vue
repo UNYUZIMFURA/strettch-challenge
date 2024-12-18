@@ -4,16 +4,18 @@ import JobCard from '@/components/JobCard.vue'
 import Navbar from '@/components/Navbar.vue'
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
-import { useCreateJobModal } from '@/store/createJobModalVisibility'
+import { useCreateJobModal } from '@/store/createJobModal'
 import { ref, computed, onMounted } from 'vue'
 import { createJob, getJobs } from '@/composables/useJobs'
 import type { Job } from '@/types/Job'
 
 const createJobModal = useCreateJobModal()
 const isCreateModalVisible = computed(() => createJobModal.visible)
+
 const hideCreateJobModal = () => {
   createJobModal.hideModal()
 }
+
 const jobs = ref<Job[] | null>(null)
 const loading = ref(false)
 const validationSchema = toTypedSchema(
@@ -65,7 +67,7 @@ onMounted(() => {
         ><span class="font-semibold">{{ jobs?.length || 'loading' }}</span> Job(s) Found</span
       >
       <div class="flex flex-wrap gap-4">
-        <JobCard v-for="job in jobs" :job="job"/>
+        <JobCard v-for="job in jobs" :job="job" />
         <div
           v-if="isCreateModalVisible"
           class="h-screen w-screen flex items-center justify-center bg-[rgba(0,0,0,.5)] fixed top-0 left-0 z-20"

@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { useAuthStore } from '@/store/authStore'
-import { useCreateJobModal } from '@/store/createJobModalVisibility'
+import { useCreateJobModal } from '@/store/createJobModal'
 
 const authStore = useAuthStore()
 const user = authStore.getUser()
 const createJobModal = useCreateJobModal()
 const isAdmin = user?.user_type === 'PARTRNER_COMPANY_ADMIN'
 const displayJobCreateModal = () => {
-    createJobModal.showModal();
-};
-
+  createJobModal.showModal()
+}
 </script>
 
 <template>
