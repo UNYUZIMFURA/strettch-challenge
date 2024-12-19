@@ -15,5 +15,5 @@
 - Supabase
 
 ![Login Preview Image](https://github.com/UNYUZIMFURA/strettch-challenge/blob/main/Screenshot%202024-12-16%20at%2008.58.59.png)
-![Jobs Preview Image](https://github.com/UNYUZIMFURA/strettch-challenge/blob/main/Screenshot%202024-12-18%20at%2010.32.11.png)
+![Jobs Preview Image](https://github.com/UNYUZIMFURA/strettch-challenge/blob/main/Screenshot%202024-12-19%20at%2009.48.24.png)
 
