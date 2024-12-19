@@ -64,7 +64,7 @@ onMounted(() => {
     <Navbar />
     <div class="w-full px-4 md:px-10 py-[3rem]">
       <span class="text-lg"
-        ><span class="font-semibold">{{ jobs?.length || 'loading' }}</span> Job(s) Found</span
+        ><span class="font-semibold">{{ jobs?.length || '0' }}</span> Job(s) Found</span
       >
       <div class="w-full flex flex-wrap h-[20rem] py-6 gap-4">
         <JobCard v-for="job in jobs" :job="job" />
